@@ -1,0 +1,4 @@
+spring:
+  hadoop:
+    fsUri: hdfs://localhost:8020
+    resourceManagerHost: localhost
