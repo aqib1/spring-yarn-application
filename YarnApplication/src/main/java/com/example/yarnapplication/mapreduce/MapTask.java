@@ -13,5 +13,12 @@ public class MapTask extends Mapper<LongWritable, Text, Text, IntWritable>{
 	protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, IntWritable>.Context context)
 			throws IOException, InterruptedException {
 		System.out.println(value);
+		String hotelInfoKey = getHotelKey(value);
+		
+	}
+
+	private String getHotelKey(Text value) {
+		String line = value.toString();
+		return null;
 	}
 }
