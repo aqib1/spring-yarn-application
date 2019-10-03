@@ -11,7 +11,7 @@ public class AppConfiguration extends SpringHadoopConfigurerAdapter {
 
 	@Override
 	public void configure(HadoopConfigConfigurer config) throws Exception {
-		config.fileSystemUri("hdfs://localhost:8020");
-		config.resourceManagerAddress("localhost");
+		config.fileSystemUri("hdfs://10.22.24.127:9000");
+		config.resourceManagerAddress("10.22.24.127");
 	}
 }
