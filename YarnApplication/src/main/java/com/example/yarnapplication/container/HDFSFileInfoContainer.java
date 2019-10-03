@@ -10,13 +10,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 @YarnComponent
-public class ContainerApplication {
-	private static final Log log = LogFactory.getLog(ContainerApplication.class);
+public class HDFSFileInfoContainer {
+	private static final Log log = LogFactory.getLog(HDFSFileInfoContainer.class);
 	@Autowired
 	private Configuration conf;
 	
 	@OnContainerStart
 	public void listRootHdfsFiles() {
+		@SuppressWarnings("resource")
 		FsShell fsShell = new FsShell(conf);
 		for(FileStatus fileStatus : fsShell.ls(true, "")) {
 			log.info("File -> "+ fileStatus);
