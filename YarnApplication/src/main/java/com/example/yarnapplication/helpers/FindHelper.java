@@ -13,6 +13,10 @@ public class FindHelper {
 
 	private static FindHelper findHelper = null;
 
+	private FindHelper() {
+
+	}
+
 	public FindHelper input(String[] args) {
 		if (isValidInput(args)) {
 			findHotels(args);
@@ -30,6 +34,7 @@ public class FindHelper {
 
 	private void findHotels(String[] args) {
 		PopularHotelFinder.getInstance().findHotels(args[0], args[1]);
+		SortHotelHelper.getInstance().sortHotels(args[1], args[0] + Consts.SORTED_DIR);
 	}
 
 	// double check locking

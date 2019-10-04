@@ -22,6 +22,9 @@ public class PopularHotelFinder {
 
 	private static PopularHotelFinder popularHotelFinder;
 
+	private PopularHotelFinder() {
+	}
+
 	@SuppressWarnings("deprecation")
 	public PopularHotelFinder findHotels(String input, String output) {
 		Path inputPath = new Path(input);
@@ -38,6 +41,8 @@ public class PopularHotelFinder {
 
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(IntWritable.class);
+			job.setOutputKeyClass(Text.class);
+			job.setOutputValueClass(IntWritable.class);
 
 			FileInputFormat.setInputPaths(job, inputPath);
 			job.setInputFormatClass(TextInputFormat.class);
