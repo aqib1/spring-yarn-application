@@ -34,7 +34,8 @@ public class FindHelper {
 
 	private void findHotels(String[] args) {
 		PopularHotelFinder.getInstance().findHotels(args[0], args[1]);
-		SortHotelHelper.getInstance().sortHotels(args[1], args[0] + Consts.SORTED_DIR);
+		SortHotelHelper.getInstance().sortHotels(args[1], args[1] + Consts.SORTED_DIR);
+		PrintHelper.getInstance().printResults(3, args[1] + Consts.SORTED_DIR + "/" + Consts.RESULT_MR_RESULT_NAME);
 	}
 
 	// double check locking

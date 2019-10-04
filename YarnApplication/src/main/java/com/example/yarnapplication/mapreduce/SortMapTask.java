@@ -16,7 +16,7 @@ public class SortMapTask extends Mapper<LongWritable, Text, IntWritable, Text>{
 			throws IOException, InterruptedException {
 		String line = value.toString();
 		
-		if(!Consts.isNullOrEmptyString(line) && !line.isBlank()) {
+		if(!Consts.isNullOrEmptyString(line) && !line.trim().isEmpty()) {
 			String [] splits = line.split("\t");
 			String keyVal = splits[0];
 			String valueVal = splits[1];

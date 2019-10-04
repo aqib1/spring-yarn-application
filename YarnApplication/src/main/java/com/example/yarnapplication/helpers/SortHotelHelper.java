@@ -35,11 +35,12 @@ public class SortHotelHelper {
 			job.setJarByClass(SortHotelHelper.class);
 
 			job.setMapperClass(SortMapTask.class);
-
+			job.setReducerClass(SortReduceTask.class);
 			job.setMapOutputKeyClass(IntWritable.class);
 			job.setMapOutputValueClass(Text.class);
 			job.setOutputKeyClass(IntWritable.class);
 			job.setOutputValueClass(Text.class);
+			job.setSortComparatorClass(IntWritableComparator.class);
 
 			FileInputFormat.addInputPath(job, input);
 			job.setInputFormatClass(TextInputFormat.class);
